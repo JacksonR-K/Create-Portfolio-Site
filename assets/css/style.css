@@ -1,6 +1,6 @@
 body {
     display: flex;
-    flex-flow: column;
+    flex-direction: column;
 }
 
 #title-image-container {
@@ -21,7 +21,7 @@ header h1 {
     padding: 10px;
     text-align: left;
     height: fit-content;
-    font-size: 4vw;
+    font-size: 4em;
     background: #74DBF9;
     }
 
@@ -53,53 +53,137 @@ header h1 {
 }
 
 #main-content {
+    flex: 1 1 auto;
+    flex-direction: column;
+    display: flex;
     border-top-style: solid;
-    border-width: 3px;
+    border-width: 7px;
     border-color: #74DBF9;
+    background-color: #4d94ff85; 
+}
+
+.topic {
+    display: flex;
     flex: 1 1 auto;
 }
 
+.topic h2 {
+    flex-basis: 30vw;
+    font-size: 1.5em;
+    padding: 4vw;
+    margin: 15px 0px;
+    border-right: 2px solid #4D94FF;
+    text-align: right;
+}
+
+.topic aside {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-basis: 65vw;
+    font-size: 1em;
+    padding: 1em;
+}
+
+.card {
+    flex: 1 1 0;
+    border: 1px solid black;
+    height: 25em;
+    min-width: 40%;
+    margin: 10px;
+    position: relative;
+    background-size: cover;
+}
+
+/* Temporary styling for project 'cards' that have yet to be filled */
+.card.coming-soon {
+    background-image: url(../coming-soon.jpg);
+    box-shadow: 0px 0px 500px 50px #4D94FF inset;
+}
+
+#featured-project {
+    flex: 1 1 100%;
+    background-image: url(../Horiseon.PNG);
+}
+
+/* Enlarges the empty span tags to fill the project 'cards' 
+   creating a link (to the showcased project) that matches the size of the card 
+   so the user can click anywhere in the card to see the linked project */
+   .link-spanner{ 
+    position:absolute; 
+    width:100%;
+    height:100%;
+    top:0;
+    left: 0;
+    z-index: 1;
+}
 
 /* Media Queries */
+@media screen and (max-width:1130px){
+    .card {
+        min-width: 50%; /* Keep project cards large enough to fill screen but break side-by-side cards into single cards */
+    }
+}
+
 @media screen and (max-width:920px){
     #title-image-container {
-        flex-direction: column-reverse;
+        flex-direction: column-reverse; /* Switch order of image and main heading to create a column layout */
     }
 
     header h1 {
-        text-align: center;
+        text-align: center; /* Center text to match column layout */
     }
 
     #navigation li {
-        margin-top: 15px;
+        margin-top: 15px; /* Apply a margin to create space between main heading and navigation */
     }
 
     #portrait {
-        align-self: center;
+        align-self: center; /* Move image to center to match column layout */
     }
 }
 
 @media screen and (max-width:600px){
     #navigation li {
-        padding: 15px;
+        padding: 15px; /* Shrink padding from 20px to fix screen */
     }
 
     header h1 { 
-        font-size: 6vw;
+        font-size: 2em; /* Shrink h1 from 4em to fit screen */
     }
 
-    #navigation a {
-        font-size: 3vw;
+    .topic {
+        flex-direction: column; /* Flip main content to a column to accomodate narrow screens */
+    }
+
+    .topic h2 {
+        text-align: start;
+        border: none; /* Reset existing border */
+        border-bottom: 2px solid #4D94FF; /* Apply new border to match flipped direction */
+        margin: 0px; /* Reset margin property on subtitles to remove excess gaps*/
+    }
+
+    .topic h2, .topic aside {
+        flex-basis: auto; /* Set auto basis to remove excess gaps between subtitle and content */
     }
 }
 
 @media screen and (max-width:400px){
-    #navigation a {
-        font-size: 4vw;
+    header h1 {
+        font-size: 1.8em; /* Shrink h1 from 2em to fit screen */
+    }
+
+    #navigation li {
+        padding: 10px; /* Shrink padding from 15px to fit screen */
+    }
+
+    .card {
+        height: 10em; /* Shrink the project cards down to a reasonable size on small screen */
     }
 }
 
 /* Credits:
 https://alignedonline.com/non%E2%80%91breaking-spaces/ 
 https://stackoverflow.com/questions/90178/make-a-div-fill-the-height-of-the-remaining-screen-space
+https://stackoverflow.com/questions/796087/make-a-div-into-a-link
 */
