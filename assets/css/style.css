@@ -85,6 +85,10 @@ header h1 {
     padding: 1em;
 }
 
+.topic p {
+    font-size: 2em;
+}
+
 .card {
     flex: 1 1 0;
     border: 1px solid black;
@@ -154,6 +158,10 @@ header h1 {
 
     .topic {
         flex-direction: column; /* Flip main content to a column to accomodate narrow screens */
+    }
+
+    .topic p {
+        font-size: 1em;
     }
 
     .topic h2 {
