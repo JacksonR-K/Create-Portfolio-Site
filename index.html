@@ -1,85 +1,98 @@
 <!DOCTYPE html>
 <html lang="en-US">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Jackson Rainbird-Kendrick Portfolio</title>
-        <link rel="stylesheet" type="text/css" href="./assets/css/reset.css" />
-        <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
-    </head>
-    <body>
-        <header>
-            <!--"title-image-container" holds the title and portrait image inside a flex box to orient them using flex properties-->
-            <div id="title-image-container">
-                <h1>Jackson <pre>Rainbird-Kendrick</pre></h1> <!--Used pre tag so last name isn't broken into 2 words-->
-                <img id="portrait" src="assets/Jackson.JPG" alt="Portrait photo of Jackson" />
-            </div>
-            <nav id="navigation">
-                <ul>
-                    <li><a href="#about-me">About Me</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact-me">Contact Me</a></li>
-                </ul>
-            </nav>    
-        </header>
-        <section id="main-content">
-            <section class="topic" id="about-me">
-                <h2>About Me</h2>
-                <aside>
-                    <p>Jackson Rainbird-Kendrick is currently an IT Specialist at Canadian Tire.
-                       Jackson has over 5 years of coding experience in languages such as: HTML, CSS,
-                       JavaScript, and Java, with some exposure to Python and C#. Jackson graduated at
-                       Humber College in 2020 after taking a two year Computer Programming course and is 
-                       currently partaking in a Web Development bootcamp through the University Of Toronto.
-                       His passion for logic puzzles and out of box thinking has driven his love for code
-                       and that thrill of finding the missing semi-colon on line 42 that somehow broke
-                       the whole project. Jackson is looking to bring his experience into a professional Web
-                       Developer environment and to expand his understanding of the ever-changing world
-                       of code.
-                    </p>
-                </aside>
-            </section>
-            <section class="topic" id="projects">
-                <h2>Projects</h2>
-                <aside>
-                    <!--Span tags are wrapped by a link tag to create a clickable 
-                        link the size of the parent 'card'.-->
-                    <div class="card" id="featured-project">
-                        <a href="https://jacksonr-k.github.io/Challenge-1/">
-                            <span class="link-spanner"></span> 
-                        </a>
-                    </div>
-                    <div class="card coming-soon"> <!--ID to be added when new project showcased-->
-                        <a> <!--Link to be added when new project showcased-->
-                            <span class="link-spanner"></span> 
-                        </a>
-                    </div>
-                    <div class="card coming-soon"> <!--ID to be added when new project showcased-->
-                        <a> <!--Link to be added when new project showcased-->
-                            <span class="link-spanner"></span> 
-                        </a>
-                    </div>
-                    <div class="card coming-soon"> <!--ID to be added when new project showcased-->
-                        <a> <!--Link to be added when new project showcased-->
-                            <span class="link-spanner"></span> 
-                        </a>
-                    </div>
-                    <div class="card coming-soon"> <!--ID to be added when new project showcased-->
-                        <a> <!--Link to be added when new project showcased-->
-                            <span class="link-spanner"></span> 
-                        </a>
-                    </div>
-                </aside>
-            </section>
-            <section class="topic" id="contact-me">
-                <h2>Contact Me</h2>
-                <aside>
-                    <p>705-994-4506</p>
-                    <p>jacksonrainbirdk@gmail.com</p>
-                    <a href="https://github.com/JacksonR-K">GitHub</a>
-                    <a href="https://www.linkedin.com/in/jackson-rainbird-kendrick/">LinkedIn</a>
-                </aside>
-            </section>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jackson Rainbird-Kendrick Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+</head>
+
+<body>
+    <header>
+        <!--"title-image-container" holds the title and portrait image inside a flex box to orient them using flex properties-->
+        <div id="title-image-container">
+            <h1>Jackson
+                <pre>Rainbird-Kendrick</pre>
+            </h1> <!--Used pre tag so last name isn't broken into 2 words-->
+            <img id="portrait" src="assets/Jackson.JPG" alt="Portrait photo of Jackson" />
+        </div>
+        <nav id="navigation">
+            <ul>
+                <!-- Links lead to the subtitled sections in the main page -->
+                <li><a href="#about-me">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact-me">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="main-content">
+        <section class="topic" id="about-me">
+            <h2>About Me</h2>
+            <aside>
+                <p>Jackson Rainbird-Kendrick is currently an IT Specialist at Canadian Tire.
+                    Jackson has over 5 years of coding experience in languages such as: HTML, CSS,
+                    JavaScript, and Java, with some exposure to Python and C#. Jackson graduated at
+                    Humber College in 2020 after taking a two year Computer Programming course and is
+                    currently partaking in a Web Development bootcamp through the University Of Toronto.
+                    His passion for logic puzzles and out of box thinking has driven his love for code
+                    and that thrill of finding the missing semi-colon on line 42 that somehow broke
+                    the whole project. Jackson is looking to bring his experience into a professional Web
+                    Developer environment and to expand his understanding of the ever-changing world
+                    of code.
+                </p>
+            </aside>
         </section>
-    </body>
+        <section class="topic" id="projects">
+            <h2>Projects</h2>
+            <aside>
+                <!--Span tags below are wrapped by a link tag to create a clickable 
+                        link the size of the parent 'card'.
+                    -->
+                <div class="card" id="featured-project">
+                    <!-- 'featured-project' is set to be initially larger than other projects -->
+                    <h3 class="project-title">Horiseon Landing Page</h3>
+                    <a href="https://jacksonr-k.github.io/Challenge-1/">
+                        <span class="link-spanner"></span>
+                    </a>
+                </div>
+                <div class="card coming-soon"> <!--ID to be added when new project showcased-->
+                    <h3 class="project-title">Coming Soon</h3>
+                    <a> <!--Link to be added when new project showcased-->
+                        <span class="link-spanner"></span>
+                    </a>
+                </div>
+                <div class="card coming-soon"> <!--ID to be added when new project showcased-->
+                    <h3 class="project-title">Coming Soon</h3>
+                    <a> <!--Link to be added when new project showcased-->
+                        <span class="link-spanner"></span>
+                    </a>
+                </div>
+                <div class="card coming-soon"> <!--ID to be added when new project showcased-->
+                    <h3 class="project-title">Coming Soon</h3>
+                    <a> <!--Link to be added when new project showcased-->
+                        <span class="link-spanner"></span>
+                    </a>
+                </div>
+                <div class="card coming-soon"> <!--ID to be added when new project showcased-->
+                    <h3 class="project-title">Coming Soon</h3>
+                    <a> <!--Link to be added when new project showcased-->
+                        <span class="link-spanner"></span>
+                    </a>
+                </div>
+            </aside>
+        </section>
+        <section class="topic" id="contact-me">
+            <h2>Contact Me</h2>
+            <aside>
+                <p>705-994-4506</p>
+                <p>jacksonrainbirdk@gmail.com</p>
+                <a href="https://github.com/JacksonR-K">GitHub</a>
+                <a href="https://www.linkedin.com/in/jackson-rainbird-kendrick/">LinkedIn</a>
+            </aside>
+        </section>
+    </section>
+</body>
+
 </html>

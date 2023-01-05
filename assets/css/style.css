@@ -8,21 +8,22 @@ body {
     flex-direction: column;
 }
 
-/* Parent container used to apply space between the title and profile picture using flexbox properties */ 
+/* Parent container used to apply space between the title and profile picture using flexbox properties */
 #title-image-container {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
 }
 
 /* Prevents the last name in the title from breaking into two words */
 #no-break {
-    white-space: nowrap; 
+    white-space: nowrap;
 }
 
 header {
     background-color: #4D94FF;
 }
 
+/* Main page title */
 header h1 {
     margin-top: 30px;
     padding: 10px;
@@ -30,7 +31,7 @@ header h1 {
     height: fit-content;
     font-size: 4em;
     background: #74DBF9;
-    }
+}
 
 /* Contains the navigation links and uses flexbox properties to align them centered along the bottom of the header */
 #navigation {
@@ -43,6 +44,7 @@ header h1 {
     display: flex;
 }
 
+/* Individual links in the nav bar */
 #navigation li {
     margin: 3px 3px 0px 3px;
     padding: 20px;
@@ -51,9 +53,11 @@ header h1 {
 }
 
 #navigation a {
+    /* Change the colour of the links to black to match other text on screen */
     color: #000000;
 }
 
+/* Portrait Image */
 #portrait {
     margin: 30px 30px 0px 30px;
     width: 200px;
@@ -69,14 +73,16 @@ header h1 {
     border-top-style: solid;
     border-width: 7px;
     border-color: #74DBF9;
-    background-color: #4d94ff85; 
+    background-color: #4d94ff85;
 }
 
+/* Each section of the main content based on subtitle */
 .topic {
     display: flex;
     flex: 1 1 auto;
 }
 
+/* Subtitles */
 .topic h2 {
     flex-basis: 30vw;
     font-size: 1.5em;
@@ -86,6 +92,7 @@ header h1 {
     text-align: right;
 }
 
+/* Content associated to each subtitle */
 .topic aside {
     display: flex;
     justify-content: space-between;
@@ -95,24 +102,42 @@ header h1 {
     padding: 1em;
 }
 
-.topic p {
-    font-size: 2em;
+.topic p,
+.topic a {
+    /* Standardize the font-size of links and paragraph text */
+    font-size: 2em; 
 }
 
 .card {
     flex: 1 1 0;
-    border: 1px solid black;
+    border: 4px solid #74DBF9;
     height: 25em;
-    min-width: 40%;
+    /* Cards stay large enough to become paired in a 2 column layout */
+    min-width: 40%; 
     margin: 10px;
     position: relative;
     background-size: cover;
+    background-position: top left;
+}
+
+/* Add a highlight when user hovers 'card' */
+.card:hover {
+    box-shadow: 0px 0px 50px 50px #74DBF9 inset;
 }
 
 /* Temporary styling for project 'cards' that have yet to be filled */
 .card.coming-soon {
-    background-image: url(../coming-soon.jpg);
     box-shadow: 0px 0px 500px 50px #4D94FF inset;
+}
+
+/* Place a title for each project inside the project 'cards' */
+.project-title {
+    background-color: #74DBF9;
+    width: fit-content;
+    font-size: 1.5em;
+    padding: 10px;
+    position: absolute;
+    bottom: 4em;
 }
 
 #featured-project {
@@ -123,101 +148,121 @@ header h1 {
 /* Enlarges the empty span tags to fill the project 'cards' 
    creating a link (to the showcased project) that matches the size of the card 
    so the user can click anywhere in the card to see the linked project */
-   .link-spanner{ 
-    position:absolute; 
-    width:100%;
-    height:100%;
-    top:0;
+.link-spanner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
     left: 0;
     z-index: 1;
 }
 
-#contact-me aside{
+#contact-me aside {
     align-items: center;
 }
 
-#contact-me aside > * {
+#contact-me aside>* {
     margin: 4px;
 }
 
-#contact-me a{
-    font-size: 2em;
-}
-
 /* Media Queries */
-@media screen and (max-width:1375px){
+@media screen and (max-width:1375px) {
     #contact-me aside {
+        /* Stack contact info when screen no longer fits them */
         flex-direction: column;
     }
 }
 
-@media screen and (max-width:1130px){
+@media screen and (max-width:1130px) {
     .card {
-        min-width: 50%; /* Keep project cards large enough to fill screen but break side-by-side cards into single cards */
+        /* Keep project cards large enough to fill screen but break side-by-side cards into single cards */
+        min-width: 50%;
     }
 }
 
-@media screen and (max-width:920px){
+@media screen and (max-width:920px) {
     #title-image-container {
-        flex-direction: column-reverse; /* Switch order of image and main heading to create a column layout */
+        /* Switch order of image and main heading to create a column layout */
+        flex-direction: column-reverse;
     }
 
     header h1 {
-        text-align: center; /* Center text to match column layout */
+        /* Center text to match column layout */
+        text-align: center;
     }
 
     #navigation li {
-        margin-top: 15px; /* Apply a margin to create space between main heading and navigation */
+        /* Apply a margin to create space between main heading and navigation */
+        margin-top: 15px;
     }
 
     #portrait {
-        align-self: center; /* Move image to center to match column layout */
+        /* Move image to center to match column layout */
+        align-self: center;
     }
 }
 
-@media screen and (max-width:600px){
-    #navigation li {
-        padding: 15px; /* Shrink padding from 20px to fix screen */
+@media screen and (max-width:700px) {
+    .project-title {
+        /* Move title to the bottom of the 'card' */
+        bottom: 0em;
+        /* Stretch title along the bottom of the 'card' */
+        width: 100%;
     }
 
-    header h1 { 
-        font-size: 2em; /* Shrink h1 from 4em to fit screen */
+    .topic p,
+    .topic a {
+        /* Scale font size down from 2em */
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width:600px) {
+    #navigation li {
+        /* Shrink padding from 20px to fix screen */
+        padding: 15px;
+    }
+
+    header h1 {
+        /* Shrink h1 from 4em to fit screen */
+        font-size: 2em;
     }
 
     .topic {
-        flex-direction: column; /* Flip main content to a column to accomodate narrow screens */
-    }
-
-    .topic p {
-        font-size: 1em;
-    }
-
-    #contact-me a{
-        font-size: 1em;
+        /* Flip main content to a column to accomodate narrow screens */
+        flex-direction: column;
     }
 
     .topic h2 {
         text-align: start;
-        border: none; /* Reset existing border */
-        border-bottom: 2px solid #4D94FF; /* Apply new border to match flipped direction */
-        margin: 0px; /* Reset margin property on subtitles to remove excess gaps*/
+        /* Reset existing border */
+        border: none;
+        /* Apply new border to match flipped direction */
+        border-bottom: 2px solid #4D94FF;
+        /* Reset margin property on subtitles to remove excess gaps*/
+        margin: 0px;
     }
 
-    .topic h2, .topic aside {
-        flex-basis: auto; /* Set auto basis to remove excess gaps between subtitle and content */
+    .topic h2,
+    .topic aside {
+        /* Set auto basis to remove excess gaps between subtitle and content */
+        flex-basis: auto;
     }
 }
 
-@media screen and (max-width:400px){
+@media screen and (max-width:400px) {
     header h1 {
-        font-size: 1.8em; /* Shrink h1 from 2em to fit screen */
+        /* Shrink h1 from 2em to fit screen */
+        font-size: 1.8em;
     }
 
     #navigation li {
-        padding: 10px; /* Shrink padding from 15px to fit screen */
+        /* Shrink padding from 15px to fit screen */
+        padding: 10px;
     }
 
     .card {
-        height: 10em; /* Shrink the project cards down to a reasonable size on small screen */
+        /* Shrink the project cards down to a reasonable size on small screen */
+        height: 10em;
     }
 }
