@@ -1,15 +1,22 @@
+/* Using flexbox, the page is set to have a header with a two column layout for the main
+   content with the left side being the subtitles and the right side containing the content.
+   When the page is viewed on smaller devices, the column changes to a one column layout.
+*/
+
 body {
     display: flex;
     flex-direction: column;
 }
 
+/* Parent container used to apply space between the title and profile picture using flexbox properties */ 
 #title-image-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
 }
 
+/* Prevents the last name in the title from breaking into two words */
 #no-break {
-    white-space: nowrap;
+    white-space: nowrap; 
 }
 
 header {
@@ -25,11 +32,13 @@ header h1 {
     background: #74DBF9;
     }
 
+/* Contains the navigation links and uses flexbox properties to align them centered along the bottom of the header */
 #navigation {
     display: flex;
     justify-content: center;
 }
 
+/* Set to flex to align the list contents evenly */
 #navigation ul {
     display: flex;
 }
@@ -52,6 +61,7 @@ header h1 {
     border-radius: 100%;
 }
 
+/* Parent container holds 3 individual flexboxes (one for each topic) */
 #main-content {
     flex: 1 1 auto;
     flex-direction: column;
@@ -123,8 +133,11 @@ header h1 {
 }
 
 #contact-me aside{
-    display: flex;
     align-items: center;
+}
+
+#contact-me aside > * {
+    margin: 4px;
 }
 
 #contact-me a{
@@ -132,6 +145,12 @@ header h1 {
 }
 
 /* Media Queries */
+@media screen and (max-width:1375px){
+    #contact-me aside {
+        flex-direction: column;
+    }
+}
+
 @media screen and (max-width:1130px){
     .card {
         min-width: 50%; /* Keep project cards large enough to fill screen but break side-by-side cards into single cards */
@@ -170,6 +189,10 @@ header h1 {
     }
 
     .topic p {
+        font-size: 1em;
+    }
+
+    #contact-me a{
         font-size: 1em;
     }
 
