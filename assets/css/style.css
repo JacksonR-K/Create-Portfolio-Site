@@ -221,9 +221,3 @@ header h1 {
         height: 10em; /* Shrink the project cards down to a reasonable size on small screen */
     }
 }
-
-/* Credits:
-https://alignedonline.com/non%E2%80%91breaking-spaces/ 
-https://stackoverflow.com/questions/90178/make-a-div-fill-the-height-of-the-remaining-screen-space
-https://stackoverflow.com/questions/796087/make-a-div-into-a-link
-*/
