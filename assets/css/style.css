@@ -122,6 +122,15 @@ header h1 {
     z-index: 1;
 }
 
+#contact-me aside{
+    display: flex;
+    align-items: center;
+}
+
+#contact-me a{
+    font-size: 2em;
+}
+
 /* Media Queries */
 @media screen and (max-width:1130px){
     .card {
