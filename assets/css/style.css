@@ -140,9 +140,18 @@ header h1 {
     bottom: 4em;
 }
 
-#featured-project {
+.featured-project {
     flex: 1 1 100%;
+}
+
+#Horiseon {
     background-image: url(../Horiseon.PNG);
+}
+
+#The-Weather-DJ {
+    background-image: url(../TheWeatherDJ.jpg);
+    background-position: left;
+    background-size: 100% 100%;
 }
 
 /* Enlarges the empty span tags to fill the project 'cards' 
