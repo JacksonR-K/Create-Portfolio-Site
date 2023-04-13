@@ -154,6 +154,11 @@ header h1 {
     background-size: 100% 100%;
 }
 
+#Revved-Up-Reviews {
+    background-image: url(../RevvedUpReviews.png);
+    background-position: left;
+}
+
 /* Enlarges the empty span tags to fill the project 'cards' 
    creating a link (to the showcased project) that matches the size of the card 
    so the user can click anywhere in the card to see the linked project */
